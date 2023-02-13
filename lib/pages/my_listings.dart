@@ -13,12 +13,12 @@ class MyListingsPage extends StatelessWidget {
       home: Scaffold(
         drawer: const DrawerMenuPage(),
         appBar: AppBar(
-          title: Text('Мои объявления'),
+          title: const Text('Мои объявления'),
         ),
         body: Container(
           child: Center(
             child: Container(
-              child: Text('Мои объявления'),
+              child: const Text('Мои объявления'),
             ),
           ),
         ),

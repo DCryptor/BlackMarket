@@ -1,4 +1,3 @@
-import 'package:black_market/pages/all_listings.dart';
 import 'package:black_market/pages/auth.dart';
 import 'package:black_market/pages/create_profile.dart';
 import 'package:flutter/material.dart';
@@ -19,18 +18,20 @@ class _RegistrationPageState extends State<RegistrationPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            child: Text(
+            child: const Text(
               "Регистрация",
               style: TextStyle(fontSize: 25),
             ),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 10),
-            child: Text("заполните все поля чтобы зарегистрироваться"),
+            padding: const EdgeInsets.only(bottom: 15),
+            child: const Text("заполните все поля чтобы зарегистрироваться"),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 10, left: 20, right: 20),
-            child: TextField(
+            height: 60,
+            padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
+            child: const TextField(
+              style: TextStyle(fontSize: 14),
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 label: Text("Номер телефона или почта"),
@@ -39,8 +40,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 10, left: 20, right: 20),
-            child: TextField(
+            height: 60,
+            padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
+            child: const TextField(
+              style: TextStyle(fontSize: 14),
               obscureText: true,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -50,8 +53,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 20, left: 20, right: 20),
-            child: TextField(
+            height: 60,
+            padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
+            child: const TextField(
+              style: TextStyle(fontSize: 14),
               obscureText: true,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -61,29 +66,31 @@ class _RegistrationPageState extends State<RegistrationPage> {
             ),
           ),
           Container(
-            height: 50,
+            height: 60,
             width: 190,
-            padding: EdgeInsets.only(bottom: 10),
+            padding: const EdgeInsets.only(bottom: 10),
             child: ElevatedButton(
-              child: Text("Зарегистрироваться"),
+              child: const Text("Зарегистрироваться"),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => CreateProfilePage()),
+                  MaterialPageRoute(
+                      builder: (context) => const CreateProfilePage()),
                 );
               },
             ),
           ),
           Container(
             child: TextButton(
-              child: Text(
+              child: const Text(
                 'У вас уже есть аккаунт? Войти.',
                 style: TextStyle(color: Colors.black54),
               ),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AuthorizationPage()),
+                  MaterialPageRoute(
+                      builder: (context) => const AuthorizationPage()),
                 );
               },
             ),

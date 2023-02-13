@@ -31,7 +31,7 @@ class DrawerMenuPage extends StatelessWidget {
                           builder: (context) => const MyProfilePage()),
                     );
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_forward_ios_sharp,
                     color: Colors.black26,
                   ),
@@ -40,10 +40,10 @@ class DrawerMenuPage extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.message_outlined,
             ),
-            title: Text("Все объявления"),
+            title: const Text("Все объявления"),
             onTap: () {
               //Navigator.pop(context);
               Navigator.push(
@@ -54,10 +54,10 @@ class DrawerMenuPage extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.note_alt_outlined,
             ),
-            title: Text("Мои объявления"),
+            title: const Text("Мои объявления"),
             onTap: () {
               Navigator.push(
                 context,
@@ -66,10 +66,10 @@ class DrawerMenuPage extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.note_add_outlined,
             ),
-            title: Text("Добавить объявление"),
+            title: const Text("Добавить объявление"),
             onTap: () {
               Navigator.push(
                 context,
@@ -78,10 +78,10 @@ class DrawerMenuPage extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.attach_money_outlined,
             ),
-            title: Text("Пополнить баланс"),
+            title: const Text("Пополнить баланс"),
             onTap: () {
               Navigator.push(
                 context,
@@ -90,10 +90,10 @@ class DrawerMenuPage extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.settings,
             ),
-            title: Text("Настройки"),
+            title: const Text("Настройки"),
             onTap: () {
               Navigator.push(
                 context,
@@ -102,10 +102,10 @@ class DrawerMenuPage extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.settings,
             ),
-            title: Text("Выйти"),
+            title: const Text("Выйти"),
             onTap: () {
               showAlertDialog(context);
             },
@@ -121,13 +121,13 @@ Widget ProfileDrawMenu(String user_name) {
     child: Row(
       children: [
         Container(
-          child: CircleAvatar(
+          child: const CircleAvatar(
             foregroundImage: AssetImage(''),
             radius: 35,
           ),
         ),
         Container(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             left: 10,
           ),
           child: Column(
@@ -137,7 +137,7 @@ Widget ProfileDrawMenu(String user_name) {
               Container(
                 child: Text(
                   user_name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                   ),
                 ),
@@ -146,31 +146,31 @@ Widget ProfileDrawMenu(String user_name) {
                 child: Row(
                   children: [
                     Container(
-                      child: Icon(
+                      child: const Icon(
                         Icons.star_border,
                         color: Colors.black26,
                       ),
                     ),
                     Container(
-                      child: Icon(
+                      child: const Icon(
                         Icons.star_border,
                         color: Colors.black26,
                       ),
                     ),
                     Container(
-                      child: Icon(
+                      child: const Icon(
                         Icons.star_border,
                         color: Colors.black26,
                       ),
                     ),
                     Container(
-                      child: Icon(
+                      child: const Icon(
                         Icons.star_border,
                         color: Colors.black26,
                       ),
                     ),
                     Container(
-                      child: Icon(
+                      child: const Icon(
                         Icons.star_border,
                         color: Colors.black26,
                       ),
@@ -191,10 +191,10 @@ Widget BalanceDrawMenu() {
     child: Row(
       children: [
         Container(
-          child: Text("Баланс:"),
+          child: const Text("Баланс:"),
         ),
         Container(
-          child: Text("100Р"),
+          child: const Text("100Р"),
         ),
       ],
     ),
@@ -204,17 +204,17 @@ Widget BalanceDrawMenu() {
 showAlertDialog(BuildContext dialogContext) {
   // set up the buttons
   Widget cancelButton = TextButton(
-    child: Text("Отмена"),
+    child: const Text("Отмена"),
     onPressed: () {
       Navigator.of(dialogContext, rootNavigator: true).pop();
     },
   );
   Widget launchButton = TextButton(
-    child: Text("Выйти"),
+    child: const Text("Выйти"),
     onPressed: () {
       Navigator.push(
         dialogContext,
-        MaterialPageRoute(builder: (context) => AuthorizationPage()),
+        MaterialPageRoute(builder: (context) => const AuthorizationPage()),
       );
       Navigator.of(dialogContext, rootNavigator: true).pop();
     },
@@ -222,8 +222,8 @@ showAlertDialog(BuildContext dialogContext) {
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Text("Предупреждение"),
-    content: Text("Вы действительно хотите выйти из своего аккаунта?"),
+    title: const Text("Предупреждение"),
+    content: const Text("Вы действительно хотите выйти из своего аккаунта?"),
     actions: [
       cancelButton,
       launchButton,

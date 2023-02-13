@@ -1,7 +1,5 @@
 import 'package:black_market/pages/all_listings.dart';
-import 'package:black_market/pages/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class CreateProfilePage extends StatefulWidget {
   const CreateProfilePage({Key? key}) : super(key: key);
@@ -20,27 +18,29 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            child: CircleAvatar(foregroundImage: AssetImage(''),
+            child: CircleAvatar(foregroundImage: const AssetImage(''),
               radius: 80,
               child: IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.edit),
+                icon: const Icon(Icons.edit),
               ),
             ),
           ),
           Container(
-            child: Text(
+            child: const Text(
               "Профиль",
               style: TextStyle(fontSize: 25),
             ),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 10),
-            child: Text("введите свои данные"),
+            padding: const EdgeInsets.only(bottom: 15),
+            child: const Text("введите свои данные"),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 10, left: 20, right: 20),
-            child: TextField(
+            height: 60,
+            padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
+            child: const TextField(
+              style: TextStyle(fontSize: 14),
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 label: Text("Никнейм"),
@@ -49,8 +49,10 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 10, left: 20, right: 20),
-            child: TextField(
+            height: 60,
+            padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
+            child: const TextField(
+              style: TextStyle(fontSize: 14),
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 label: Text("Фамилия"),
@@ -59,8 +61,10 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 10, left: 20, right: 20),
-            child: TextField(
+            height: 60,
+            padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
+            child: const TextField(
+              style: TextStyle(fontSize: 14),
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 label: Text("Имя"),
@@ -69,15 +73,17 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 20, left: 20, right: 20),
+            height: 60,
+            padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
             child: Container(
               child: TextField(
+                style: const TextStyle(fontSize: 14),
                 controller: birth_date,
                 onTap: (){
                   _datePickerDialog();
                 },
                 keyboardType: TextInputType.datetime,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   label: Text("Дата рождения"),
                   prefixIcon: Icon(Icons.note_alt_outlined),
@@ -86,15 +92,15 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
             ),
           ),
           Container(
-            height: 50,
+            height: 60,
             width: 190,
-            padding: EdgeInsets.only(bottom: 10),
+            padding: const EdgeInsets.only(bottom: 15),
             child: ElevatedButton(
-              child: Text("Далее"),
+              child: const Text("Далее"),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AllListingsPage()),
+                  MaterialPageRoute(builder: (context) => const AllListingsPage()),
                 );
               },
             ),

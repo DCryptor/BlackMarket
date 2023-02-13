@@ -13,12 +13,12 @@ class MyProfilePage extends StatelessWidget {
       home: Scaffold(
         drawer: const DrawerMenuPage(),
         appBar: AppBar(
-          title: Text('Мой профиль'),
+          title: const Text('Мой профиль'),
         ),
         body: Container(
           child: Center(
             child: Container(
-              child: Text('Мой профиль'),
+              child: const Text('Мой профиль'),
             ),
           ),
         ),

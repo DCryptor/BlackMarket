@@ -13,12 +13,12 @@ class AddBalancePage extends StatelessWidget {
       home: Scaffold(
         drawer: const DrawerMenuPage(),
         appBar: AppBar(
-          title: Text('Пополнить баланс'),
+          title: const Text('Пополнить баланс'),
         ),
         body: Container(
           child: Center(
             child: Container(
-              child: Text('Пополнить баланс'),
+              child: const Text('Пополнить баланс'),
             ),
           ),
         ),
