@@ -15,7 +15,7 @@ class BlackMarket extends StatelessWidget {
       ),
       title: 'Доска объявлений',
       home: Scaffold(
-        body: RegistrationPage(),
+        body: AuthorizationPage(),
       ),
     );
   }

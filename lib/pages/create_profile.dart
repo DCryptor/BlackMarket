@@ -109,11 +109,13 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
     showDatePicker(
             context: context,
             initialDate: now,
-            firstDate: DateTime(2000),
+            firstDate: DateTime(1970),
             lastDate: DateTime(2050))
         .then((DateTime? onValue) {
       _showSnackBar('$onValue', 'Ок');
-      birth_date.text = "${now.day.toString()}.${now.month.toString().padLeft(2,'0')}.${now.year.toString().padLeft(2,'0')}";
+      if (onValue != null){
+        birth_date.text = "${onValue.day.toString()}.${onValue.month.toString().padLeft(2,'0')}.${onValue.year.toString().padLeft(2,'0')}";
+      }
     });
   }
 
