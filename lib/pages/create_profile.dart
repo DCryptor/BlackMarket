@@ -18,8 +18,9 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
+            padding: const EdgeInsets.only(bottom: 25),
             child: CircleAvatar(foregroundImage: const AssetImage(''),
-              radius: 80,
+              radius: 60,
               child: IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.edit),
