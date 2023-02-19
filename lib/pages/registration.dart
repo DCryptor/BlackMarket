@@ -12,6 +12,13 @@ class RegistrationPage extends StatefulWidget {
 class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
+    final username_field = TextEditingController();
+    final password_field = TextEditingController();
+    final password_confirm_field = TextEditingController();
+
+    var username;
+    var password;
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -30,7 +37,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
           Container(
             height: 60,
             padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
-            child: const TextField(
+            child: TextField(
+              controller: username_field,
               style: TextStyle(fontSize: 14),
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -42,7 +50,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
           Container(
             height: 60,
             padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
-            child: const TextField(
+            child: TextField(
+              controller: password_field,
               style: TextStyle(fontSize: 14),
               obscureText: true,
               decoration: InputDecoration(
@@ -55,7 +64,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
           Container(
             height: 60,
             padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
-            child: const TextField(
+            child: TextField(
+              controller: password_confirm_field,
               style: TextStyle(fontSize: 14),
               obscureText: true,
               decoration: InputDecoration(
@@ -72,11 +82,23 @@ class _RegistrationPageState extends State<RegistrationPage> {
             child: ElevatedButton(
               child: const Text("Зарегистрироваться"),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const CreateProfilePage()),
-                );
+                if (username_field.text == '' &&
+                    password_field.text == '' &&
+                    password_confirm_field.text == '') {
+                  return;
+                } else {
+                  if (password_field.text == password_confirm_field.text) {
+                    username = username_field.text;
+                    password = password_field.text;
+                    Navigator.of(context).pushNamed('/create_profile',
+                        arguments: {
+                          'username': username,
+                          'password': password
+                        });
+                  } else {
+                    return;
+                  }
+                }
               },
             ),
           ),
@@ -87,11 +109,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 style: TextStyle(color: Colors.black54),
               ),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const AuthorizationPage()),
-                );
+                Navigator.of(context).pushNamed('/');
               },
             ),
           ),

@@ -12,6 +12,18 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
   final birth_date = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final nickname_field = TextEditingController();
+    final firstname_field = TextEditingController();
+    final lastname_field = TextEditingController();
+
+    final args = (ModalRoute.of(context)?.settings.arguments ??
+        {'username': '', 'password': ''}) as Map<String, dynamic>;
+    //assert(args != null && args is String, "error");
+    var nickname;
+    var fisrtname;
+    var lastname;
+    var birthdate;
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -19,7 +31,8 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
         children: [
           Container(
             padding: const EdgeInsets.only(bottom: 25),
-            child: CircleAvatar(foregroundImage: const AssetImage(''),
+            child: CircleAvatar(
+              foregroundImage: const AssetImage(''),
               radius: 60,
               child: IconButton(
                 onPressed: () {},
@@ -35,12 +48,13 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
           ),
           Container(
             padding: const EdgeInsets.only(bottom: 15),
-            child: const Text("введите свои данные"),
+            child: Text("введите свои данные"),
           ),
           Container(
             height: 60,
             padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
-            child: const TextField(
+            child: TextField(
+              controller: nickname_field,
               style: TextStyle(fontSize: 14),
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -52,7 +66,8 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
           Container(
             height: 60,
             padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
-            child: const TextField(
+            child: TextField(
+              controller: firstname_field,
               style: TextStyle(fontSize: 14),
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -64,7 +79,8 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
           Container(
             height: 60,
             padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
-            child: const TextField(
+            child: TextField(
+              controller: lastname_field,
               style: TextStyle(fontSize: 14),
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -80,7 +96,7 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
               child: TextField(
                 style: const TextStyle(fontSize: 14),
                 controller: birth_date,
-                onTap: (){
+                onTap: () {
                   _datePickerDialog();
                 },
                 keyboardType: TextInputType.datetime,
@@ -99,10 +115,17 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
             child: ElevatedButton(
               child: const Text("Далее"),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AllListingsPage()),
-                );
+                if (nickname_field.text == '' &&
+                    firstname_field.text == '' &&
+                    birth_date.text == '') {
+                  return;
+                } else {
+                  var username = args['username'];
+                  var password = args['password'];
+                  fisrtname = firstname_field.text;
+                  lastname = lastname_field.text;
+                  birthdate = birth_date.text;
+                }
               },
             ),
           ),
@@ -120,8 +143,9 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
             lastDate: DateTime(2050))
         .then((DateTime? onValue) {
       _showSnackBar('$onValue', 'Ок');
-      if (onValue != null){
-        birth_date.text = "${onValue.day.toString()}.${onValue.month.toString().padLeft(2,'0')}.${onValue.year.toString().padLeft(2,'0')}";
+      if (onValue != null) {
+        birth_date.text =
+            "${onValue.day.toString()}.${onValue.month.toString().padLeft(2, '0')}.${onValue.year.toString().padLeft(2, '0')}";
       }
     });
   }

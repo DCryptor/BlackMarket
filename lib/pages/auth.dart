@@ -75,10 +75,7 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
             child: ElevatedButton(
               child: const Text("Войти"),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AllListingsPage()),
-                );
+                Navigator.of(context).pushNamed('/all_listings');
               },
             ),
           ),
@@ -89,10 +86,7 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
                 style: TextStyle(color: Colors.black54),
               ),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const RegistrationPage()),
-                );
+                Navigator.of(context).pushNamed('/reg');
               },
             ),
           ),

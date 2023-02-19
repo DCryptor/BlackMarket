@@ -25,11 +25,7 @@ class DrawerMenuPage extends StatelessWidget {
                 ProfileDrawMenu('Николай'),
                 IconButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const MyProfilePage()),
-                    );
+                    Navigator.of(context).pushNamed('/my_profile');
                   },
                   icon: const Icon(
                     Icons.arrow_forward_ios_sharp,
@@ -46,11 +42,7 @@ class DrawerMenuPage extends StatelessWidget {
             title: const Text("Все объявления"),
             onTap: () {
               //Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const AllListingsPage()),
-              );
+              Navigator.of(context).pushNamed('/all_listings');
             },
           ),
           ListTile(
@@ -59,10 +51,7 @@ class DrawerMenuPage extends StatelessWidget {
             ),
             title: const Text("Мои объявления"),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const MyListingsPage()),
-              );
+              Navigator.of(context).pushNamed('/my_listings');
             },
           ),
           ListTile(
@@ -71,10 +60,7 @@ class DrawerMenuPage extends StatelessWidget {
             ),
             title: const Text("Добавить объявление"),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const NewListingPage()),
-              );
+              Navigator.of(context).pushNamed('/new_listing');
             },
           ),
           ListTile(
@@ -83,10 +69,7 @@ class DrawerMenuPage extends StatelessWidget {
             ),
             title: const Text("Пополнить баланс"),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const AddBalancePage()),
-              );
+              Navigator.of(context).pushNamed('/add_balance');
             },
           ),
           ListTile(
@@ -95,10 +78,7 @@ class DrawerMenuPage extends StatelessWidget {
             ),
             title: const Text("Настройки"),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SettingsPage()),
-              );
+              Navigator.of(context).pushNamed('/settings');
             },
           ),
           ListTile(

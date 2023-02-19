@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "441573073881",
+    "firebase_url": "https://blackmarket-48540-default-rtdb.firebaseio.com",
+    "project_id": "blackmarket-48540",
+    "storage_bucket": "blackmarket-48540.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441573073881:android:0cd9082e185c1bea066fc8",
+        "android_client_info": {
+          "package_name": "com.kskilstudio.black_market"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441573073881-dhr6ppi1h6vdj5tubkcu09rv5v2h5pao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUHnnZPizPKNmsWXM9IGheJOXjO4O3JBA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441573073881-dhr6ppi1h6vdj5tubkcu09rv5v2h5pao.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "441573073881-egggutvpehq85ddkrgoju5mpq3tk9gu1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.myapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
