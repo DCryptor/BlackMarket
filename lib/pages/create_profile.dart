@@ -1,4 +1,5 @@
 import 'package:black_market/pages/all_listings.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class CreateProfilePage extends StatefulWidget {
@@ -125,6 +126,15 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
                   fisrtname = firstname_field.text;
                   lastname = lastname_field.text;
                   birthdate = birth_date.text;
+                  FirebaseFirestore.instance.collection('users').add({
+                    'username': username,
+                    'password': password,
+                    'firstname': fisrtname,
+                    'lastname': lastname,
+                    'birthdate': birthdate,
+                    'balance': 0
+                  });
+                  Navigator.of(context).pushNamed('/all_listings');
                 }
               },
             ),
